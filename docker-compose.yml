@@ -1,0 +1,15 @@
+version: "3"
+services:
+  backend:
+    build: . # Assuming backend Dockerfile is in a backend directory
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    init: true
+    environment:
+      - NODE_ENV=development
